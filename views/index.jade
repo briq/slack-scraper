@@ -8,6 +8,8 @@ html
     .container
       .row.justify-content-center
         .col-md-6.col-md-offset-3.col-xs-12
+          if errorMessage
+            .alert.alert-danger(role='alert')= errorMessage
           form.justify-content-center.form(action='/download', target='_blank')
             .form-group
               label(for='token')
@@ -15,8 +17,6 @@ html
                 |  (
                 a(href='https://briq.slite.com/app/filters/all/notes/SkGHn5XTW', target='_blank') How to get your token
                 | )
-              input.form-control(type='text', name='token', placeholder='Ex: xoxs-72756405373-537554425334-277258848284-s3mszz3cfa', required)
+              input.form-control(type='text', name='token', placeholder='Ex: xoxs-72756405373-537554425334-277258848284-s3mszz3cfa', required, value=token)
             button.btn.btn-primary(type='submit') Download CSV
 
-//- if errorMessage
-//-   div(style='color: red')= errorMessage

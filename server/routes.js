@@ -68,12 +68,12 @@ router.get('/download', (req, res, next) => {
           errorMessage = 'Please specify your token';
           break;
         case 'invalid_auth':
-          errorMessage = 'Your token doesn\'t seem to be invalid :(';
+          errorMessage = 'Your token doesn\'t seem to be valid :(';
           break;
         default:
           errorMessage = 'Something went wrong :( Contact thomas@givebriq.com to know what\'s wrong';
       }
-      res.render('index', { errorMessage });
+      res.render('index', { errorMessage, token });
     });
 });
 
