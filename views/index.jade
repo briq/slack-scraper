@@ -4,7 +4,7 @@ html
     title Slack scraper
     != css('app')
   body
-    form
+    form(action='/download', target='_blank')
       if errorMessage
         div(style='color: red')= errorMessage
       label(for='token') Slack token
@@ -12,9 +12,7 @@ html
       a(href='https://briq.slite.com/app/filters/all/notes/SkGHn5XTW', target='_blank') How to get your token
       | )
       br
-      input#token(type='text', placeholder='Ex: xoxs-72756405373-537554425334-277258848284-s3mszz3cfa', name='token', required)
+      input(type='text', placeholder='Ex: xoxs-72756405373-537554425334-277258848284-s3mszz3cfa', name='token', required)
       br
-      button#submit(type='submit')
+      button(type='submit')
         | Download CSV
-
-    != js('app')

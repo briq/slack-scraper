@@ -20,12 +20,10 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('connect-assets')({
   precompile: [
-    'app.js',
     'app.css'
   ],
   paths: [
-    'assets/css',
-    'assets/js'
+    'assets/css'
   ]
 }, (mincer) => {
   mincer.environment.appendPath('.');
